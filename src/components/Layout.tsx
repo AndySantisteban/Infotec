@@ -44,6 +44,11 @@ const items: MenuItem[] = [
         label: 'SOBRE NOSOTROS',
         icon: <TbInfoCircle />,
     },
+    {
+        key: 'carrito',
+        label: 'CARRITO',
+        icon: <TbShoppingBag color="#008e92" />,
+    },
 ]
 function Layout() {
     const navigate = useNavigate()

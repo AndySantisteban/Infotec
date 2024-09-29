@@ -1,8 +1,10 @@
 import { Carousel, Col, Menu, Row, Space } from 'antd'
-import CategoriesDropDown from '../../components/CategoriesDropDown'
 import Search from 'antd/es/input/Search'
 import Title from 'antd/es/typography/Title'
 import { items } from '../../components/categories'
+import CategoriesDrawer from '../../components/CategoriesDrawer'
+import ProductList from '../../components/ProductList'
+import { ProductsComputadorasListData, ProductsImpresorasListData, ProductsLaptopsListData } from '../../services/products'
 
 function Index() {
     return (
@@ -10,12 +12,11 @@ function Index() {
             <Row
                 style={{
                     alignItems: 'center',
-                    // backgroundColor: '#008e92',
                     padding: 10,
                 }}
             >
                 <Col md={6} style={{ textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '10px' }}>
-                    <CategoriesDropDown />
+                    <CategoriesDrawer />
                 </Col>
                 <Col md={12} style={{ textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '10px' }}>
                     <img src="/logo-without-bg.png" alt="" height={'80px'} />
@@ -46,6 +47,11 @@ function Index() {
             <div>
                 <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['']} items={items} style={{ minWidth: '100%', borderColor: '#008e92', backgroundColor: '#008e92', justifyContent: 'center', padding: '20px 0' }} />
             </div>
+
+            <ProductList title="LAPTOPS" productList={ProductsLaptopsListData} />
+            <ProductList title="OFERTAS" productList={[]} />
+            <ProductList title="COMPUTADORAS" productList={ProductsComputadorasListData} />
+            <ProductList title="IMPRESORAS" productList={ProductsImpresorasListData} />
         </div>
     )
 }
